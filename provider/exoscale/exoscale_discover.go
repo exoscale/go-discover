@@ -1,4 +1,4 @@
-// Package exoscale provides node discovery for Scaleway.
+// Package exoscale provides node discovery for Exoscale.
 package exoscale
 
 import (
@@ -34,7 +34,7 @@ func (p *Provider) Help() string {
 
 func (p *Provider) Addrs(args map[string]string, l *log.Logger) ([]string, error) {
 	if args["provider"] != "exoscale" {
-		return nil, fmt.Errorf("discover-scaleway: invalid provider " + args["provider"])
+		return nil, fmt.Errorf("discover-exoscale: invalid provider " + args["provider"])
 	}
 
 	if l == nil {
