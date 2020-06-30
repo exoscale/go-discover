@@ -98,7 +98,6 @@ func (p *Provider) Addrs(args map[string]string, l *log.Logger) ([]string, error
 
 	instances := resp.(*egoscale.ListVirtualMachinesResponse).VirtualMachine
 
-	// Filter servers by tag
 	var addrs []string
 	for _, instance := range instances {
 		ip := instance.IP().String()
