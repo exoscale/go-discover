@@ -1,6 +1,6 @@
 //Configuring the provider
 provider "exoscale" {
-  version = "~> 1.15.0"
+  version = "~> 0.15"
 }
 
 resource "exoscale_compute" "test-01" {

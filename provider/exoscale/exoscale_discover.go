@@ -51,6 +51,10 @@ func (p *Provider) Addrs(args map[string]string, l *log.Logger) ([]string, error
 	zone := args["zone"]
 	addrType := args["addr_type"]
 
+	if addrType == "" {
+		addrType = "public_v4"
+	}
+
 	if addrType != "public_v4" && addrType != "public_v6" {
 		l.Printf("[INFO] discover-exoscale: Address type %s is not supported. Valid values are public_v4 or public_v6. Falling back to 'public_v4'", addrType)
 		addrType = "public_v4"
